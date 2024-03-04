@@ -5,9 +5,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Centered background image */
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Poké_Ball_icon.svg/1024px-Poké_Ball_icon.svg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 50%; /* Make the image 50% smaller */
+  
+  /* Flexbox to center horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app-container {
+  text-align: center; /* Center the content horizontally */
+}
+
+.sprite-container {
+  display: flex;
+  justify-content: center; /* Center the sprites horizontally */
+  margin-top: 20px; /* Add some top margin for spacing */
+}
+
+.sprite-item {
+  position: relative; /* Make sure the container is positioned */
+  margin: 0 10px; /* Add spacing between sprites */
+}
+
+.sprite-circle {
+  position: absolute; /* Position the circle relative to the sprite container */
+  top: 50%; /* Move the circle to the middle vertically */
+  left: 50%; /* Move the circle to the middle horizontally */
+  transform: translate(-50%, -50%); /* Center the circle */
+  background-color: white; /* Set the background color */
+  border-radius: 50%; /* Make the circle shape */
+  padding: 0; /* Remove padding */
+}
+
+.sprite-circle img {
+  display: block; /* Make the image fill the circle */
+  width: 100%; /* Make the image fill the circle */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.sprite-item img {
+  position: relative; /* Ensure sprite sits on top of the circle */
+  z-index: 1; /* Ensure sprite sits on top of the circle */
+  width: 100px; /* Adjust width of sprite */
+  height: auto; /* Maintain aspect ratio */
 }
