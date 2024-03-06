@@ -11,6 +11,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  
   background-size: 50%; /* Make the image 50% smaller */
   
   /* Flexbox to center horizontally and vertically */
@@ -26,7 +27,7 @@ body {
 .sprite-container {
   display: flex;
   justify-content: center; /* Center the sprites horizontally */
-  margin-top: 20px; /* Add some top margin for spacing */
+  margin-top: 210px; /* Add some top margin for spacing */
 }
 
 .sprite-item {
@@ -35,24 +36,25 @@ body {
 }
 
 .sprite-circle {
-  position: absolute; /* Position the circle relative to the sprite container */
-  top: 50%; /* Move the circle to the middle vertically */
-  left: 50%; /* Move the circle to the middle horizontally */
-  transform: translate(-50%, -50%); /* Center the circle */
-  background-color: white; /* Set the background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px; /* Adjust width of the circle */
+  height: 150px; /* Adjust height of the circle */
   border-radius: 50%; /* Make the circle shape */
-  padding: 0; /* Remove padding */
+  position: relative; /* Make sure the container is positioned */
 }
 
 .sprite-circle img {
   display: block; /* Make the image fill the circle */
-  width: 100%; /* Make the image fill the circle */
+  width: 80px; /* Adjust width of the sprite */
   height: auto; /* Maintain aspect ratio */
 }
 
 .sprite-item img {
-  position: relative; /* Ensure sprite sits on top of the circle */
+  position: absolute; /* Ensure sprite sits on top of the circle */
+  top: 50%; /* Move the sprite to the middle vertically */
+  left: 50%; /* Move the sprite to the middle horizontally */
+  transform: translate(-50%, -50%); /* Center the sprite */
   z-index: 1; /* Ensure sprite sits on top of the circle */
-  width: 100px; /* Adjust width of sprite */
-  height: auto; /* Maintain aspect ratio */
 }
